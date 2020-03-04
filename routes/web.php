@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
+Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
 
 Auth::routes();
 
@@ -20,5 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home'); 
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
-    Route::resource('product', 'ProductController');
+    // Route::resource('product', 'ProductController');
+    Route::resource('product', 'ProductController')->except(['show']);
+    Route::get('/product/bulk', 'ProductController@massUploadForm')->name('product.bulk');
+    Route::post('/product/bulk', 'ProductController@massUpload')->name('product.saveBulk');
 });
