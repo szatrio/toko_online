@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="{{ asset('ecommerce/css/responsive.css') }}">
 </head>
 
+
 <body>
 	<!--================Header Menu Area =================-->
 	<header class="header_area">
@@ -80,7 +81,7 @@
 									</li>
 									<hr>
 									<li class="nav-item">
-										<a href="#" class="icons">
+										<a href="{{ route('front.list_cart') }}" class="icons">
 											<i class="lnr lnr lnr-cart"></i>
 										</a>
 									</li>
@@ -213,7 +214,7 @@
 				<p class="col-lg-12 footer-text text-center">
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
                     All rights reserved | This template is made with 
-                    <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://daengweb.id" target="_blank">Daengweb</a>
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
 				</p>
 			</div>
 		</div>
@@ -235,5 +236,8 @@
 	<script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/theme.js') }}"></script>
+
+	@yield('js')
+
 </body>
 </html>
