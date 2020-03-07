@@ -28,6 +28,11 @@ Route::get('/checkout', 'Ecommerce\CartController@checkout')->name('front.checko
 Route::post('/checkout', 'Ecommerce\CartController@processCheckout')->name('front.store_checkout');
 Route::get('/checkout/{invoice}', 'Ecommerce\CartController@checkoutFinish')->name('front.finish_checkout');
 
+Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function() {
+    Route::get('login', 'LoginController@loginForm')->name('customer.login');
+    Route::get('verify/{token}', 'FrontController@verifyCustomerRegistration')->name('customer.verify');
+});
+
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home'); 
     Route::resource('category', 'CategoryController')->except(['create', 'show']);

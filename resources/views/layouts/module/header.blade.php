@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Gibraltarpedia_black_text_logo.png" width="89" height="25" alt="DW Ecommerce">
+        <img class="navbar-brand-full" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Gibraltarpedia_black_text_logo.png" width="89" height="25">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
